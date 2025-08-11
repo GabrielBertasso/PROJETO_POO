@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROJETO JOGO DA VELHA</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="/manifest.webmanifest">
+    <meta name="theme-color" content="#2c3e50">
+</head>
+<body>
+    <header>
+        <h1>JOGO DA VELHA</h1>
+    </header>
+    
+    <div class="score-board-wrapper">
+        <h3><p style="text-align: center;"><span id="placar">PLACAR</span></p></h3>
+        <div class="score-board">
+            <div class="player-score">
+                <h3>Jogador X</h3>
+                <p id="score-x">0</p>
+            </div>
+            <div class="separator"></div>
+            <div class="player-score">
+                <h3>Jogador O</h3>
+                <p id="score-o">0</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="game-container">
+        <div class="turn-indicator">
+            <h3><p style="text-align: center;"><span id="current-turn">É a vez do jogador X</span></p></h3>
+        </div>
+        
+        <div class="button-group">
+            <button class="reset-btn" id="toggle-mode" aria-label="Toggle between playing against computer or human">Jogar contra Bot</button>
+            <button class="reset-btn" id="theme-toggle">Alternar Tema</button>
+        </div>
+        
+        <div class="board" id="board" ontouchstart="">
+            <!-- Cells will be added by JS -->
+        </div>
+    </div>
+    
+    <div id="result-popup" class="result-popup" aria-hidden="true" role="dialog">
+        <div class="popup-content">
+            <h2 id="result-message"></h2>
+            <button class="reset-btn" id="play-again">Jogar Novamente</button>
+        </div>
+    </div>
+    
+    <div class="button-group">
+        <button class="reset-btn" id="reset-game">Resetar Jogo</button>
+        <button class="reset-btn" id="reset-scores">Zerar Placar</button>
+    </div>
+    
+    <audio id="win-sound" src="assets/sounds/win.mp3" preload="auto"></audio>
+    <audio id="lose-sound" src="assets/sounds/lose.mp3" preload="auto"></audio>
+    <audio id="draw-sound" src="assets/sounds/draw.mp3" preload="auto"></audio>
+    <audio id="click-sound" src="assets/sounds/move.mp3" preload="auto"></audio>
+    <audio id="switch-sound" src="assets/sounds/switch.mp3" preload="auto"></audio>
+
+    <script src="script.js" type="module"></script>
+</body>
+</html>
